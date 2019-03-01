@@ -20,7 +20,6 @@ search_terms = [
     'Energidrycker'
 ]
 search_terms.each do |search_term|
-
   pages << {
 
       page_type: 'products_listing',
