@@ -113,7 +113,7 @@ unless body.at_css('span.u-colorGray.u-textSmall') && body.search('span.u-colorG
           EAN: ean_code,
           UPC: ''
       }
-
+      info['_collection'] = 'products'
       outputs << info
 
 
