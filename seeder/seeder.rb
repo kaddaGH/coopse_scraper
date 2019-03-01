@@ -20,19 +20,19 @@ search_terms = [
     'Energidrycker'
 ]
 search_terms.each do |search_term|
-  [1, 2].each do |i|
+
   pages << {
 
       page_type: 'products_listing',
       method: 'GET',
-      url: "https://www.coop.se/handla-online/sok/?q=#{URI.encode(search_term)}&page=#{i}",
+      url: "https://www.coop.se/handla-online/sok/?q=#{URI.encode(search_term)}&page=1",
       vars: {
           'input_type' => 'search',
           'search_term' => search_term,
-          'page' => i
+          'page' => 1
       }
 
 
   }
-end
+
 end
