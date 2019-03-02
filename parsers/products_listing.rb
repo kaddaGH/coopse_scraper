@@ -60,7 +60,7 @@ unless body.at_css('span.u-colorGray.u-textSmall') && body.search('span.u-colorG
       end
 
       description = data['details']['description']
-      description = description[/(?<=Produktbeskrivning:<\/b>)([^<>]+?)(?=<)/].gsub(/[\n\s,]/,' ').strip rescue ''
+      description = description[/(?<=Produktbeskrivning)([^{]+?)(?=<\/p>)/].gsub(/<[^<>]*>/,'').gsub(/[\n\s,:]/,' ').strip rescue ''
 
       image_url = 'http:' + data['image']['url']
       star_rating = ''
