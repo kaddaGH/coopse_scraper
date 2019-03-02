@@ -99,7 +99,7 @@ unless body.at_css('span.u-colorGray.u-textSmall') && body.search('span.u-colorG
           PRODUCT_PAGE: current_page,
           PRODUCT_ID: id,
           PRODUCT_NAME: title,
-          PRODUCT_DESCRIPTION: description,
+          #PRODUCT_DESCRIPTION: description,
           PRODUCT_MAIN_IMAGE_URL: image_url,
           PRODUCT_ITEM_SIZE: (item_size rescue ''),
           PRODUCT_ITEM_SIZE_UOM: (uom rescue ''),
