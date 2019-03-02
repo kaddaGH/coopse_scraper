@@ -122,13 +122,14 @@ unless body.at_css('span.u-colorGray.u-textSmall') && body.search('span.u-colorG
 
 
 # Add  next page
-  next_page = body.css('.js-pageNext').attr('href') rescue nil?
-  unless next_page.nil?
-    
+  next_page = body.at_css('.js-pageNext')
+
+  unless  next_page.nil?
+    next_page_url =  next_page.attr('href')
     pages << {
         page_type: 'products_listing',
         method: 'GET',
-        url: next_page,
+        url: next_page_url,
         vars: {
             'input_type' => page['vars']['input_type'],
             'search_term' => page['vars']['search_term'],
