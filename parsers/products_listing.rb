@@ -59,11 +59,11 @@ unless body.at_css('span.u-colorGray.u-textSmall') && body.search('span.u-colorG
         brand = data['manufacturer']
       end
 
+      description = data['details']['description']
+      description = description[/(?<=Produktbeskrivning:<\/b>)([^<>]+?)/].description.gsub(/[\n\s,]/,' ').strip rescue ''
 
-      description = data['details']['description'].gsub(/<("[^"]*"|'[^']*'|[^'">])*>/, '')
-      description = description.gsub(/[\n\s,]/,' ')
 
-          image_url = 'http:' + data['image']['url']
+      image_url = 'http:' + data['image']['url']
       star_rating = ''
       number_of_reviews = ''
       price = data['price']
