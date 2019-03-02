@@ -61,8 +61,9 @@ unless body.at_css('span.u-colorGray.u-textSmall') && body.search('span.u-colorG
 
 
       description = data['details']['description'].gsub(/<("[^"]*"|'[^']*'|[^'">])*>/, '')
+      description = description.gsub(/,/,' ')
 
-      image_url = 'http:' + data['image']['url']
+          image_url = 'http:' + data['image']['url']
       star_rating = ''
       number_of_reviews = ''
       price = data['price']
