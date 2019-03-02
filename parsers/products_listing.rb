@@ -114,7 +114,7 @@ unless body.at_css('span.u-colorGray.u-textSmall') && body.search('span.u-colorG
           UPC: ''
       }
       info['_collection'] = 'products'
-      #outputs << info
+      outputs << info
 
 
     end
