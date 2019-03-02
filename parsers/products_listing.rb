@@ -99,7 +99,7 @@ unless body.at_css('span.u-colorGray.u-textSmall') && body.search('span.u-colorG
           PRODUCT_PAGE: current_page,
           PRODUCT_ID: id,
           PRODUCT_NAME: title,
-          #PRODUCT_DESCRIPTION: description,
+          PRODUCT_DESCRIPTION: description,
           PRODUCT_MAIN_IMAGE_URL: image_url,
           PRODUCT_ITEM_SIZE: (item_size rescue ''),
           PRODUCT_ITEM_SIZE_UOM: (uom rescue ''),
@@ -121,6 +121,26 @@ unless body.at_css('span.u-colorGray.u-textSmall') && body.search('span.u-colorG
   end
 
 
+# Add  next page
+  next_page = body.at_css('.js-pageNext').attr('href') rescue nil?
+  unless next_page.nil?
 
+
+    pages << {
+        page_type: 'products_listing',
+        method: 'GET',
+        url: next_page,
+        vars: {
+            'input_type' => page['vars']['input_type'],
+            'search_term' => page['vars']['search_term'],
+            'page' => current_page + 1,
+            'scrape_url_nbr_products' => scrape_url_nbr_products,
+            'scrape_url_nbr_products_pg1' => scrape_url_nbr_products_pg1
+        }
+
+
+    }
+
+  end
 
 end
